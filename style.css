@@ -52,7 +52,13 @@ a { color: inherit; text-decoration: none; }
   backdrop-filter: blur(8px);
   background: rgba(11, 18, 32, 0.7);
   border-bottom: 1px solid var(--line);
+  transition: transform 0.25s ease, background 0.2s ease;
+  will-change: transform;
 }
+
+/* hide nav when scrolling down, show when scrolling up */
+body.scroll-down .nav { transform: translateY(-110%); }
+body.scroll-up .nav { transform: translateY(0); }
 
 .nav-brand {
   font-family: var(--font-mono);
@@ -73,6 +79,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-links a:hover { color: var(--accent); }
+
+/* make hero-schema suitable for transform-based parallax */
+.hero-schema { will-change: transform; }
+
 
 /* ---------- hero ---------- */
 .hero {
