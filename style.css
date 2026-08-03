@@ -237,22 +237,57 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* projects */
+carousel { position: relative; }
+ 
 .projects-list {
   display: flex;
-  flex-direction: column;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 8px;
+  /* sembunyiin scrollbar */
+  scrollbar-width: none;
 }
-
+.projects-list::-webkit-scrollbar { display: none; }
+ 
 .project-card {
   background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
   padding: 28px 32px;
   transition: background 0.2s ease;
+  flex: 0 0 340px;
+  scroll-snap-align: start;
 }
-
+ 
+.carousel-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+ 
+.carousel-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+ 
+.carousel-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+ 
 .project-card:hover { background: var(--bg-soft); }
-
+ 
 .project-head {
   display: flex;
   justify-content: space-between;
@@ -261,33 +296,33 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
   gap: 8px;
 }
-
+ 
 .project-head h3 {
   font-family: var(--font-display);
   font-size: 20px;
 }
-
+ 
 .project-tag {
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--amber);
 }
-
+ 
 .project-card p {
   color: var(--ink-dim);
   font-size: 15px;
   max-width: 620px;
 }
-
+ 
 /* contact */
 .section-contact { text-align: center; }
-
+ 
 .contact-title {
   font-family: var(--font-display);
   font-size: clamp(32px, 5vw, 48px);
   margin-bottom: 32px;
 }
-
+ 
 .contact-links {
   display: flex;
   justify-content: center;
@@ -295,15 +330,15 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-mono);
   font-size: 14px;
 }
-
+ 
 .contact-links a {
   color: var(--ink-dim);
   border-bottom: 1px solid transparent;
   transition: all 0.2s ease;
 }
-
+ 
 .contact-links a:hover { color: var(--accent); border-color: var(--accent); }
-
+ 
 .footer {
   text-align: center;
   padding: 32px;
@@ -312,3 +347,4 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-dim);
   border-top: 1px solid var(--line);
 }
+ 
