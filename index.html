@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dwiki — Software Engineering Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- background grid + noise layer -->
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-brand">dwiki<span class="cursor-dot">.</span>dev</div>
+  <nav class="nav-links">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#contact">contact</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <p class="terminal-line">
+      <span class="prompt">visitor@dwiki.dev</span><span class="colon">:~$</span>
+      <span id="typed"></span><span class="type-cursor">▌</span>
+    </p>
+    <h1 class="hero-title">Dwiki</h1>
+    <p class="hero-role">Software Engineering Student — Universitas Pasundan</p>
+    <p class="hero-desc">
+      Bangun aplikasi mobile, web, dan sistem jaringan dari nol —
+      dari diagram UML sampai ke aplikasi yang jalan.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">lihat project</a>
+      <a href="#contact" class="btn btn-ghost">hubungi saya</a>
+    </div>
+  </div>
+  <div class="hero-schema" aria-hidden="true">
+    <svg viewBox="0 0 260 260" class="node-diagram">
+      <circle cx="130" cy="40" r="6" class="node"/>
+      <circle cx="40" cy="130" r="6" class="node"/>
+      <circle cx="220" cy="130" r="6" class="node"/>
+      <circle cx="80" cy="220" r="6" class="node"/>
+      <circle cx="180" cy="220" r="6" class="node"/>
+      <circle cx="130" cy="130" r="8" class="node node-core"/>
+      <line x1="130" y1="130" x2="130" y2="40" class="edge"/>
+      <line x1="130" y1="130" x2="40" y2="130" class="edge"/>
+      <line x1="130" y1="130" x2="220" y2="130" class="edge"/>
+      <line x1="130" y1="130" x2="80" y2="220" class="edge"/>
+      <line x1="130" y1="130" x2="180" y2="220" class="edge"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <p class="section-label">// about</p>
+  <div class="about-grid">
+    <p class="about-text">
+      Saya mahasiswa Teknik Informatika di Universitas Pasundan, fokus di
+      pengembangan software engineering, jaringan, database, serta aplikasi
+      mobile & web. Sebagian besar project saya berupa prototipe akademik —
+      mulai dari sistem booking, aplikasi presensi berbasis Firebase, sampai
+      bot otomatisasi.
+    </p>
+    <ul class="about-facts">
+      <li><span>Kampus</span>Universitas Pasundan</li>
+      <li><span>Fokus</span>Software Eng · Jaringan · Mobile/Web</li>
+      <li><span>Status</span>Mahasiswa aktif</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills">
+  <p class="section-label">// skills</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Mobile & Web</h3>
+      <p>Flutter, HTML/CSS/JS, PHP</p>
+    </div>
+    <div class="skill-card">
+      <h3>Database & Backend</h3>
+      <p>MySQL, Firebase, XAMPP</p>
+    </div>
+    <div class="skill-card">
+      <h3>Jaringan</h3>
+      <p>Cisco Packet Tracer, Firewall/IDS/IPS, ACL</p>
+    </div>
+    <div class="skill-card">
+      <h3>Tools & Docs</h3>
+      <p>UML (PlantUML), Figma, Git, Docker</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <p class="section-label">// projects</p>
+  <div class="projects-list">
+
+    <article class="project-card">
+      <div class="project-head">
+        <h3>Ambaca</h3>
+        <span class="project-tag">Flutter · PHP · MySQL</span>
+      </div>
+      <p>Platform baca webtoon/novel dark-theme untuk tugas akhir. UI ungu-navy
+        dengan hero carousel dan dukungan URL gambar chapter.</p>
+    </article>
+
+    <article class="project-card">
+      <div class="project-head">
+        <h3>Studio Booking System</h3>
+        <span class="project-tag">UML · PlantUML</span>
+      </div>
+      <p>Sistem booking studio lengkap dengan use case, activity, sequence
+        diagram, ERD, dan class diagram — dokumentasi rekayasa perangkat lunak.</p>
+    </article>
+
+    <article class="project-card">
+      <div class="project-head">
+        <h3>Attendance App</h3>
+        <span class="project-tag">Flutter · Firebase</span>
+      </div>
+      <p>Aplikasi presensi berbasis Firebase dengan tema navy/ungu gelap,
+        terintegrasi Firestore.</p>
+    </article>
+
+    <article class="project-card">
+      <div class="project-head">
+        <h3>Ticket Monitor Bot</h3>
+        <span class="project-tag">Go · Docker · Telegram API</span>
+      </div>
+      <p>Bot Telegram berbasis Go untuk memantau tiket konser, terintegrasi
+        Flaresolverr untuk bypass Cloudflare.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section-contact" id="contact">
+  <p class="section-label">// contact</p>
+  <h2 class="contact-title">Mari terhubung.</h2>
+  <div class="contact-links">
+    <a href="mailto:youremail@example.com">email</a>
+    <a href="https://github.com/yourusername" target="_blank" rel="noopener">github</a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Dwiki — built with HTML, CSS & vanilla JS</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
