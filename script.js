@@ -158,6 +158,7 @@ const track = document.getElementById('projectsTrack');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 let autoScrollInterval;
+let isAutoScrolling = false;
 
 function scrollByCard(direction) {
   if (!track) return;
@@ -190,17 +191,30 @@ function autoScroll() {
 
 function resetAutoScroll() {
   clearInterval(autoScrollInterval);
-  autoScrollInterval = setInterval(autoScroll, 5000); // Scroll setiap 5 detik
+  autoScrollInterval = setInterval(autoScroll, 3000); // Scroll setiap 3 detik
 }
 
 if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
 if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
 
-// Start auto-scroll
-resetAutoScroll();
-
-// Pause auto-scroll when user hovers over carousel
+// Pastikan track ada sebelum start auto-scroll
 if (track) {
-  track.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
-  track.addEventListener('mouseleave', resetAutoScroll);
+  // Start auto-scroll setelah delay kecil untuk memastikan DOM ready
+  setTimeout(() => {
+    isAutoScrolling = true;
+    resetAutoScroll();
+  }, 500);
+  
+  // Pause auto-scroll when user hovers over carousel
+  track.addEventListener('mouseenter', () => {
+    clearInterval(autoScrollInterval);
+    isAutoScrolling = false;
+  });
+  
+  track.addEventListener('mouseleave', () => {
+    if (!isAutoScrolling) {
+      resetAutoScroll();
+      isAutoScrolling = true;
+    }
+  });
 }
