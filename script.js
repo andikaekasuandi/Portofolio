@@ -153,27 +153,31 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ============ 5. Projects carousel (geser samping + auto-scroll) ============
+// ============ 5. Projects carousel (geser samping + auto-scroll dengan loop) ============
 const track = document.getElementById('projectsTrack');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 let autoScrollInterval;
 let isAutoScrolling = false;
+let isScrolling = false;
 
 function scrollByCard(direction) {
-  if (!track) return;
+  if (!track || isScrolling) return;
   const card = track.querySelector('.project-card');
   if (!card) return;
-  const gap = 16; // harus sama kayak "gap" di CSS .projects-list
+  const gap = 16;
   const distance = card.offsetWidth + gap;
   track.scrollBy({ left: direction * distance, behavior: 'smooth' });
   
-  // Reset auto-scroll timer when user manually scrolls
+  // Tandai sedang scroll
+  isScrolling = true;
+  setTimeout(() => { isScrolling = false; }, 600);
+  
   resetAutoScroll();
 }
 
 function autoScroll() {
-  if (!track) return;
+  if (!track || isScrolling) return;
   const card = track.querySelector('.project-card');
   if (!card) return;
   
@@ -183,15 +187,20 @@ function autoScroll() {
   
   // Jika udah di akhir, kembali ke awal
   if (track.scrollLeft >= maxScroll - 10) {
+    isScrolling = true;
     track.scrollTo({ left: 0, behavior: 'smooth' });
+    // Tunggu smooth animation selesai sebelum bisa scroll lagi
+    setTimeout(() => { isScrolling = false; }, 600);
   } else {
     track.scrollBy({ left: distance, behavior: 'smooth' });
+    isScrolling = true;
+    setTimeout(() => { isScrolling = false; }, 600);
   }
 }
 
 function resetAutoScroll() {
   clearInterval(autoScrollInterval);
-  autoScrollInterval = setInterval(autoScroll, 3000); // Scroll setiap 3 detik
+  autoScrollInterval = setInterval(autoScroll, 3000);
 }
 
 if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
@@ -199,18 +208,19 @@ if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
 
 // Pastikan track ada sebelum start auto-scroll
 if (track) {
-  // Start auto-scroll setelah delay kecil untuk memastikan DOM ready
+  // Start auto-scroll setelah delay kecil
   setTimeout(() => {
     isAutoScrolling = true;
     resetAutoScroll();
-  }, 500);
+  }, 800);
   
-  // Pause auto-scroll when user hovers over carousel
+  // Pause saat hover
   track.addEventListener('mouseenter', () => {
     clearInterval(autoScrollInterval);
     isAutoScrolling = false;
   });
   
+  // Resume saat mouse leave
   track.addEventListener('mouseleave', () => {
     if (!isAutoScrolling) {
       resetAutoScroll();
