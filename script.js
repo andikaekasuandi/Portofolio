@@ -1,3 +1,40 @@
+// ============ 0. Theme toggle ============
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+const savedTheme = localStorage.getItem('theme') || 'dark';
+
+function initTheme() {
+  htmlElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon();
+}
+
+function updateThemeIcon() {
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+}
+
+function toggleTheme() {
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  htmlElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateThemeIcon();
+}
+
+initTheme();
+themeToggle.addEventListener('click', toggleTheme);
+
+// ============ 0.5. Scroll progress bar ============
+const progressBar = document.createElement('div');
+progressBar.className = 'progress-bar';
+document.body.insertBefore(progressBar, document.body.firstChild);
+
+window.addEventListener('scroll', () => {
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = (window.scrollY / scrollHeight) * 100;
+  progressBar.style.width = scrolled + '%';
+});
+
 // ============ 1. Terminal typing effect ============
 // Simulasi teks yang diketik otomatis di hero section
 const typedEl = document.getElementById('typed');
@@ -35,7 +72,7 @@ function typeLoop() {
 
 typeLoop();
 
-// ============ 2. Scroll reveal ============
+// ============ 2. Scroll reveal with stagger ============
 // Section muncul fade-in + slide-up saat masuk viewport (satu kali)
 const revealTargets = document.querySelectorAll('.section, .project-card, .skill-card');
 
@@ -55,7 +92,11 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
-revealTargets.forEach(el => revealObserver.observe(el));
+revealTargets.forEach((el, index) => {
+  // Stagger animation - each element delays based on its index
+  el.style.transitionDelay = (index % 4) * 0.1 + 's';
+  revealObserver.observe(el);
+});
 
 // ============ 3. Active nav link on scroll ============
 const sections = document.querySelectorAll('section[id]');
