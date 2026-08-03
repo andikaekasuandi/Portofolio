@@ -153,10 +153,11 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ============ 5. Projects carousel (geser samping) ============
+// ============ 5. Projects carousel (geser samping + auto-scroll) ============
 const track = document.getElementById('projectsTrack');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
+let autoScrollInterval;
 
 function scrollByCard(direction) {
   if (!track) return;
@@ -165,7 +166,41 @@ function scrollByCard(direction) {
   const gap = 16; // harus sama kayak "gap" di CSS .projects-list
   const distance = card.offsetWidth + gap;
   track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+  
+  // Reset auto-scroll timer when user manually scrolls
+  resetAutoScroll();
+}
+
+function autoScroll() {
+  if (!track) return;
+  const card = track.querySelector('.project-card');
+  if (!card) return;
+  
+  const gap = 16;
+  const distance = card.offsetWidth + gap;
+  const maxScroll = track.scrollWidth - track.clientWidth;
+  
+  // Jika udah di akhir, kembali ke awal
+  if (track.scrollLeft >= maxScroll - 10) {
+    track.scrollTo({ left: 0, behavior: 'smooth' });
+  } else {
+    track.scrollBy({ left: distance, behavior: 'smooth' });
+  }
+}
+
+function resetAutoScroll() {
+  clearInterval(autoScrollInterval);
+  autoScrollInterval = setInterval(autoScroll, 5000); // Scroll setiap 5 detik
 }
 
 if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
 if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
+
+// Start auto-scroll
+resetAutoScroll();
+
+// Pause auto-scroll when user hovers over carousel
+if (track) {
+  track.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+  track.addEventListener('mouseleave', resetAutoScroll);
+}
