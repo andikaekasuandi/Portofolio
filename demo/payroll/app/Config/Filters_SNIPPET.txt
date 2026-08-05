@@ -1,0 +1,23 @@
+CARA PASANG AuthFilter DI app/Config/Filters.php (file ASLI CI4, JANGAN ditimpa - cukup edit 2 bagian ini):
+
+1. Di property $aliases, tambahkan baris berikut (biasanya sudah ada 'csrf', 'toolbar', dll):
+
+    public array $aliases = [
+        'csrf'          => \CodeIgniter\Filters\CSRF::class,
+        'toolbar'       => \CodeIgniter\Filters\DebugToolbar::class,
+        // ... alias bawaan lainnya biarkan saja ...
+        'auth'          => \App\Filters\AuthFilter::class,
+    ];
+
+2. Filter 'auth' TIDAK usah didaftarkan global di $globals, karena kita pasang per-route lewat
+   Routes.php (grup 'filter' => 'auth' dan 'filter' => 'auth:Admin' dst). Jadi cukup tambahkan
+   alias di atas saja, tidak perlu ubah bagian lain di Filters.php.
+
+Setelah itu jalankan migration & seeder:
+
+    php spark migrate
+    php spark db:seed UserSeeder
+
+Login default:
+- Owner -> username: owner | password: owner123
+- Admin -> username: admin | password: admin123

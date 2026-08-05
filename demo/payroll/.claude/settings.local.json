@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(& \"C:\\\\xampp\\\\mysql\\\\bin\\\\mysql.exe\" -u root database_kecap -e \"DELETE FROM reset_password_request WHERE id_user IN \\(SELECT id_user FROM users WHERE username LIKE 'temp_%'\\); DELETE FROM users WHERE username LIKE 'temp_%'; DELETE FROM log_aktivitas WHERE username LIKE 'temp_%';\")"
+    ]
+  }
+}

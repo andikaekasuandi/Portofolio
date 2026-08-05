@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php spark serve*)",
+      "Bash(php spark routes*)",
+      "Bash(php spark list*)",
+      "Bash(php spark migrate:status)",
+      "Bash(composer test)",
+      "Bash(composer dump-autoload)",
+      "Bash(vendor/bin/phpunit*)"
+    ]
+  }
+}
