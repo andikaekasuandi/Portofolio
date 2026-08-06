@@ -706,3 +706,77 @@ display:block;
 margin-bottom:4px;
 
 }
+
+/* ===========================
+   TRAINING & EXPERIENCE
+=========================== */
+
+.experience-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+}
+
+.experience-card{
+
+    background:var(--bg-soft);
+
+    border:1px solid var(--line);
+
+    border-radius:16px;
+
+    padding:28px;
+
+    transition:.3s;
+
+}
+
+.experience-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--accent);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
+
+}
+
+.experience-year{
+
+    display:inline-block;
+
+    margin-bottom:12px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:var(--accent-soft);
+
+    color:var(--accent);
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.experience-card h3{
+
+    font-family:var(--font-display);
+
+    margin-bottom:12px;
+
+    font-size:20px;
+
+}
+
+.experience-card p{
+
+    color:var(--ink-dim);
+
+    line-height:1.8;
+
+    font-size:14px;
+
+}
