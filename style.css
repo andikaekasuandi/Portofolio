@@ -350,18 +350,29 @@ body.scroll-up .nav { transform: translateY(0); }
 /* projects */
 .carousel { position: relative; }
 
-.projects-list {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding-bottom: 8px;
-  scrollbar-width: none;
-}
-.projects-list::-webkit-scrollbar { display: none; }
+.projects-list{
+    display:flex;
+    gap:24px;
 
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scroll-behavior:smooth;
+
+    scrollbar-width:none;
+
+    cursor:grab;
+
+    padding-bottom:10px;
+}
+
+.projects-list::-webkit-scrollbar{
+    display:none;
+}
+
+.projects-list.active{
+    cursor:grabbing;
+}
 .skill-card{
 
 background:#151922;
@@ -625,7 +636,7 @@ border-radius:18px;
 
 padding:22px;
 
-flex:0 0 420px;
+flex:0 0 430px;;
 
 transition:.35s;
 
