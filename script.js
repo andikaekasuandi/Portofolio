@@ -128,3 +128,22 @@ function scrollByCard(direction) {
 
 if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
 if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
+
+// ===== Auto Carousel =====
+
+setInterval(() => {
+
+    if(!track) return;
+
+    const maxScroll = track.scrollWidth - track.clientWidth;
+
+    if(track.scrollLeft >= maxScroll-20){
+        track.scrollTo({
+            left:0,
+            behavior:"smooth"
+        });
+    }else{
+        scrollByCard(1);
+    }
+
+},4000);
