@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Andika Eka Suandi — Software Engineering Student</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- background grid + noise layer -->
 <div class="bg-grid" aria-hidden="true"></div>
 
 <header class="nav">
@@ -21,11 +20,16 @@
     <a href="#experience">training</a>
     <a href="#projects">projects</a>
     <a href="#contact">contact</a>
-</nav>
+  </nav>
 </header>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
+  <div class="hero-numeral-wrap">
+    <div class="hero-numeral" id="heroNumeral">05</div>
+    <p class="hero-status">status — <span>open to internship</span></p>
+  </div>
+
   <div class="hero-inner">
     <p class="terminal-line">
       <span class="prompt">visitor@Andika.dev</span><span class="colon">:~$</span>
@@ -34,39 +38,27 @@
     <h1 class="hero-title">Andika Eka Suandi</h1>
     <p class="hero-role">Software Engineering Student — Universitas Bina Sarana Informatika</p>
     <p class="hero-desc">
-     Mahasiswa Software Engineering yang berfokus pada pengembangan aplikasi web menggunakan HTML, CSS, JavaScript, PHP, CodeIgniter 4, dan MySQL. 
-     Memiliki kemampuan dasar konfigurasi jaringan MikroTik serta antusias mempelajari teknologi baru. Saat ini terbuka untuk kesempatan magang sebagai Software Engineer, Web Developer, atau IT Support.
+      Mahasiswa Software Engineering yang berfokus pada pengembangan aplikasi web menggunakan HTML, CSS, JavaScript, PHP, CodeIgniter 4, dan MySQL.
+      Memiliki kemampuan dasar konfigurasi jaringan MikroTik serta antusias mempelajari teknologi baru. Saat ini terbuka untuk kesempatan magang sebagai Software Engineer, Web Developer, atau IT Support.
     </p>
     <div class="hero-actions">
-  <a href="#projects" class="btn btn-primary">lihat project</a>
-  <a href="#contact" class="btn btn-ghost">hubungi saya</a>
-</div>
+      <a href="#projects" class="btn btn-primary">lihat project</a>
+      <a href="#contact" class="btn btn-ghost">hubungi saya</a>
+    </div>
 
-<div class="hero-stats">
-
-    <div class="stat">
+    <div class="hero-stats">
+      <div class="stat">
         <h2>5+</h2>
         <span>Projects Completed</span>
-    </div>
-
-    <div class="stat">
+      </div>
+      <div class="stat">
         <h2>10+</h2>
         <span>Technologies</span>
-    </div>
-
-    <div class="stat">
+      </div>
+      <div class="stat">
         <h2>Open</h2>
         <span>Internship</span>
-    </div>
-
-</div>
-  </div>
-
-  <!-- foto profil di kanan -->
-  <div class="hero-schema" aria-hidden="false">
-    <div class="photo-frame">
-      <!-- GANTI src ini ke nama file foto lu, taro fotonya di folder yang sama -->
-      <img src="Foto Profile.png" alt="Foto Andika" class="photo-img">
+      </div>
     </div>
   </div>
 </section>
@@ -94,75 +86,61 @@
 <section class="section" id="skills">
   <p class="section-label">// skills</p>
   <div class="skills-grid">
-    <div class="skill-card">
+    <div class="skill-tile">
       <h3>Mobile & Web</h3>
       <p>Flutter, HTML/CSS/JS, PHP</p>
     </div>
-    <div class="skill-card">
+    <div class="skill-tile">
       <h3>Database & Backend</h3>
       <p>MySQL, Firebase, XAMPP, CodeIgniter 4</p>
     </div>
-    <div class="skill-card">
+    <div class="skill-tile">
       <h3>Jaringan</h3>
-      <p>Cisco Packet Tracer, mikrotik</p>
+      <p>Cisco Packet Tracer, MikroTik</p>
     </div>
-    <div class="skill-card">
+    <div class="skill-tile">
       <h3>Tools & Docs</h3>
-      <p>Figma, Git, Msword, canva</p>
+      <p>Figma, Git, MS Word, Canva</p>
     </div>
   </div>
 </section>
+
 <!-- ============ PELATIHAN & PENGALAMAN ============ -->
 <section class="section" id="experience">
+  <p class="section-label">// pelatihan & pengalaman</p>
+  <div class="experience-list">
 
-    <p class="section-label">// pelatihan & pengalaman</p>
+    <div class="experience-card">
+      <span class="experience-year">2026</span>
+      <h3>SERKOM Web Programming</h3>
+      <p>
+        Mengembangkan Sistem Penggajian berbasis CodeIgniter 4 dan
+        MySQL sebagai bagian dari asesmen Sertifikasi Kompetensi (SERKOM).
+      </p>
+    </div>
 
-    <div class="experience-list">
-
-        <div class="experience-card">
-
-            <span class="experience-year">2026</span>
-
-            <h3>SERKOM Web Programming</h3>
-
-            <p>
-                Mengembangkan Sistem Penggajian berbasis CodeIgniter 4 dan
-                MySQL sebagai bagian dari asesmen Sertifikasi Kompetensi (SERKOM).
-            </p>
-
-        </div>
-
-
-        <div class="experience-card">
-
-            <span class="experience-year">2025</span>
-
-            <h3>Bootcamp Internet of Things (IoT)</h3>
-
-            <p>
-                Mengembangkan prototype sistem monitoring asap berbasis IoT menggunakan
+    <div class="experience-card">
+      <span class="experience-year">2025</span>
+      <h3>Bootcamp Internet of Things (IoT)</h3>
+      <p>
+        Mengembangkan prototype sistem monitoring asap berbasis IoT menggunakan
         ESP8266, sensor asap, Arduino IDE, dan Firebase Realtime Database
         untuk mendeteksi keberadaan asap serta menampilkan status secara real-time.
+      </p>
+    </div>
 
-        </div>
-
-        <div class="experience-card">
-
-            <span class="experience-year">2023</span>
-
-            <h3> PKL di Cyberlink Network</h3>
-
-            <p>
-                 Bertugas sebagai Teknisi IT Support dengan membantu proses pemasangan
+    <div class="experience-card">
+      <span class="experience-year">2023</span>
+      <h3>PKL di Cyberlink Network</h3>
+      <p>
+        Bertugas sebagai Teknisi IT Support dengan membantu proses pemasangan
         jaringan internet di perusahaan dan rumah pelanggan, melakukan pembuatan
         kabel LAN (UTP), serta mempelajari konfigurasi jaringan dasar untuk
         mendukung instalasi dan troubleshooting jaringan.
-            </p>
-
-        </div>
-
+      </p>
     </div>
 
+  </div>
 </section>
 
 <!-- ============ PROJECTS ============ -->
@@ -171,49 +149,45 @@
   <div class="carousel">
   <div class="projects-list" id="projectsTrack">
 
-   <article class="project-card">
+    <article class="project-card">
 
-    <a href="https://andikadev.infinityfreeapp.com/miepan/public/index.php/menu" target="_blank">
-        <img src="miepan.png" class="project-image">
-    </a>
+      <a href="https://andikadev.infinityfreeapp.com/miepan/public/index.php/menu" target="_blank">
+        <img src="miepan.png" class="project-image" alt="Tampilan menu MiePan Order System">
+      </a>
 
-    <div class="project-head">
+      <div class="project-head">
         <h3>MiePan Order System</h3>
         <span class="project-tag">CodeIgniter 4 • MySQL</span>
-    </div>
+      </div>
 
-    <p>
+      <p>
         Website pemesanan makanan berbasis web untuk UMKM MiePan yang
         memungkinkan pelanggan melihat menu, melakukan pemesanan,
         checkout, serta mengecek status pesanan secara online.
-    </p>
+      </p>
 
-    <div class="tech-stack">
+      <div class="tech-stack">
         <span>HTML</span>
         <span>CSS</span>
         <span>JavaScript</span>
         <span>PHP</span>
         <span>CodeIgniter 4</span>
         <span>MySQL</span>
-    </div>
+      </div>
 
-    <div class="project-actions">
-        <a href="https://andikadev.infinityfreeapp.com/miepan/public/index.php/menu" target="_blank" class="btn btn-primary">
-            Live Demo
-        </a>
-        <a href="https://github.com/andikaekasuandi/miepan" target="_blank" class="btn btn-primary btn-ghost">
-            Lihat Kode
-        </a>
-    </div>
+      <div class="project-actions">
+        <a href="https://andikadev.infinityfreeapp.com/miepan/public/index.php/menu" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/andikaekasuandi/miepan" target="_blank" class="btn btn-ghost">Lihat Kode</a>
+      </div>
 
-</article>
+    </article>
 
     <article class="project-card">
       <div class="project-head">
         <h3>Ambaca</h3>
         <span class="project-tag">Flutter • PHP • MySQL</span>
       </div>
-      <p>Platform baca webtoon dan novel digital dengan antarmuka modern. 
+      <p>Platform baca webtoon dan novel digital dengan antarmuka modern.
         Mendukung manajemen konten, tampilan chapter, serta pengalaman membaca yang responsif.</p>
     </article>
 
@@ -222,7 +196,7 @@
         <h3>Studio Booking System</h3>
         <span class="project-tag">CodeIgniter 4 • MySQL</span>
       </div>
-      <p>Aplikasi booking studio berbasis web menggunakan CodeIgniter 4 dengan fitur reservasi, 
+      <p>Aplikasi booking studio berbasis web menggunakan CodeIgniter 4 dengan fitur reservasi,
         pengelolaan jadwal, data pelanggan, serta dashboard administrasi.</p>
     </article>
 
@@ -235,61 +209,61 @@
          Dilengkapi dengan monitoring status lampu secara real-time menggunakan Firebase.</p>
     </article>
 
-   <article class="project-card">
-
-    <a href="https://andikadev.infinityfreeapp.com/payroll/public/login" target="_blank">
-
-        <img src="payroll-login.png" class="project-image">
-
-    </a>
-
     <article class="project-card">
 
-    <a href="https://andikadev.infinityfreeapp.com/payroll/public/login" target="_blank">
-        <img src="payroll-login.png" class="project-image">
-    </a>
+      <div class="project-image-row">
+        <a href="https://andikadev.infinityfreeapp.com/payroll/public/login" target="_blank">
+          <img src="payroll-login.png" class="project-image" alt="Halaman login Sistem Penggajian SERKOM">
+        </a>
+        <a href="https://andikadev.infinityfreeapp.com/payroll/public/login" target="_blank">
+          <img src="payroll-dashboard.png" class="project-image" alt="Dashboard Sistem Penggajian SERKOM">
+        </a>
+      </div>
 
-    <div class="project-head">
+      <div class="project-head">
         <h3>Sistem Penggajian (SERKOM)</h3>
         <span class="project-tag">CodeIgniter 4 • MySQL</span>
-    </div>
+      </div>
 
-    <div class="tech-stack">
+      <p>
+        Aplikasi penggajian karyawan berbasis web dengan role login berbeda untuk
+        owner, admin, dan karyawan — mencakup pengelolaan data gaji, absensi,
+        dan slip gaji secara digital.
+      </p>
+
+      <div class="tech-stack">
         <span>HTML</span>
         <span>CSS</span>
         <span>JavaScript</span>
         <span>PHP</span>
         <span>CodeIgniter 4</span>
         <span>MySQL</span>
-    </div>
+      </div>
 
-    <div class="demo-login">
-        <h4>🔑 Demo Account</h4>
+      <div class="demo-login">
+        <h4>Akses Demo</h4>
         <div class="login-item">
-            <strong>Owner</strong><br>
-            owner / password123
+          <strong>Owner</strong>
+          owner / password123
         </div>
         <div class="login-item">
-            <strong>Admin</strong><br>
-            Zee / 123456
+          <strong>Admin</strong>
+          Zee / 123456
         </div>
         <div class="login-item">
-            <strong>Karyawan</strong><br>
-            Siti / 123456
+          <strong>Karyawan</strong>
+          Siti / 123456
         </div>
-    </div>
+      </div>
 
-    <div class="project-actions">
-        <a href="https://andikadev.infinityfreeapp.com/payroll/public/login" target="_blank" class="btn btn-primary">
-            Live Demo
-        </a>
-        <a href="https://github.com/andikaekasuandi/payroll" target="_blank" class="btn btn-primary btn-ghost">
-            Lihat Kode
-        </a>
-    </div>
+      <div class="project-actions">
+        <a href="https://andikadev.infinityfreeapp.com/payroll/public/login" target="_blank" class="btn btn-primary">Live Demo</a>
+        <a href="https://github.com/andikaekasuandi/payroll" target="_blank" class="btn btn-ghost">Lihat Kode</a>
+      </div>
 
-</article>
+    </article>
 
+  </div>
   </div>
 </section>
 
@@ -298,9 +272,9 @@
   <p class="section-label">// contact</p>
   <h2 class="contact-title">Mari terhubung.</h2>
   <div class="contact-links">
-    <a href="mailto:andikaekasuandi27@gmail.com">email</a>
-    <a href="https://github.com/andikaekasuandi" target="_blank" rel="noopener">github</a>
-    <a href="https://linkedin.com/in/andikaekasuandi" target="_blank" rel="noopener">linkedin</a>
+    <a href="mailto:andikaekasuandi27@gmail.com" class="btn btn-ghost">email</a>
+    <a href="https://github.com/andikaekasuandi" target="_blank" rel="noopener" class="btn btn-ghost">github</a>
+    <a href="https://linkedin.com/in/andikaekasuandi" target="_blank" rel="noopener" class="btn btn-ghost">linkedin</a>
   </div>
 </section>
 
